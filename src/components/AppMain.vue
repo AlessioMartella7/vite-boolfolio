@@ -5,12 +5,28 @@ export default {
     name: 'AppMain',
     data() {
         return {
-
+            projectList:[],
+            ApiProjectUrl:'http://127.0.0.1:8000/api/projects',
         }
     },
     methods:{
+        getProjects(){
+            axios.get(this.ApiProjectUrl)
+                .then(response => {
+                    this.projectList = response.data.response;
+                    console.log(response.data.response);
+                })
 
+                .catch(function (error) {
+                  console.log(error);
+                });
+              
+        },
     },
+
+    created(){
+        this.getProjects();
+    }
 }
 </script>
 
@@ -20,7 +36,7 @@ export default {
         <div class="row">
 
             <div class="col-12 my-4">
-                <h1 class="fw-bold text-center" >Projects</h1>
+                <h1 class="fw-bold text-center" >Projects List</h1>
             </div>
 
             <div class="col-12">
@@ -32,7 +48,7 @@ export default {
                         <img src="" alt="" class=" rounded">
                     </div>
                     <div class="card-body">
-                        <p><strong>Description:</strong></p>
+                        <p><strong>Description: {{projectList[1].description }}</strong></p>
                         <p><strong>URL:</strong></p>
                         <p><strong>Start Date:</strong></p>
                         <p><strong>End Date:</strong></p>
