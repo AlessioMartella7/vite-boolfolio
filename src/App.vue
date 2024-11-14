@@ -15,9 +15,7 @@ export default {
 </script>
 
 <template>
-<h1>HelloWorld</h1>
   <AppMain/>
-
 </template>
 
 <style lang="scss">
