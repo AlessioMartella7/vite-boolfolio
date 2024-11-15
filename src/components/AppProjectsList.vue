@@ -3,10 +3,10 @@ import axios from 'axios';
 import AppProjectCard from './AppProjectCard.vue';
 
 export default {
+    name: 'AppProjectsList',
     components:{
         AppProjectCard,
     },
-    name: 'AppProjectsList',
 
     data() {
         return {

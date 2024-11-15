@@ -1,5 +1,6 @@
 <script>
 
+import { RouterView } from 'vue-router';
 import AppHeader from './components/AppHeader.vue';
 
 
@@ -18,7 +19,7 @@ export default {
 
 <template>
   <AppHeader/>
-  <h1>CONTENUTI</h1>
+  <RouterView/>
 </template>
 
 <style lang="scss">
