@@ -1,12 +1,12 @@
 <script>
 
 import AppHeader from './components/AppHeader.vue';
-import AppProjectsList from './components/AppProjectsList.vue';
+
 
 export default {
   components:{
     AppHeader,
-    AppProjectsList,
+   
   },
   data() {
     return {
@@ -18,7 +18,7 @@ export default {
 
 <template>
   <AppHeader/>
-  <AppProjectsList/>
+  <h1>CONTENUTI</h1>
 </template>
 
 <style lang="scss">

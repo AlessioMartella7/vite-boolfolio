@@ -16,13 +16,13 @@ export default {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex justify-content-center gap-5 w-100">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <router-link :to="{name: 'home'}" class="nav-link active" aria-current="page" href="#">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Projects</a>
+                        <router-link :to="{name: 'projects'}" class="nav-link active" aria-current="page" href="#">Projects</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Technologies</a>
+                        <router-link :to="{name: 'technologies'}" class="nav-link active" aria-current="page" href="#">Technologies</router-link>
                     </li>
                 </ul>
             </div>

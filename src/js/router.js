@@ -5,9 +5,9 @@ import AppProjects from '../pages/AppProjects.vue'
 import AppTechnologies from '../pages/AppTechnologies.vue'
 
 const routes = [
-  { path: '/home', component: AppHome, name: 'home' },
+  { path: '/', component: AppHome, name: 'home' },
   { path: '/projects', component: AppProjects, name: 'projects'},
-  { path: '/technologies', component: AppTechnologies, name: 'thecnologies' },
+  { path: '/technologies', component: AppTechnologies, name: 'technologies' },
 ]
 
 const router = createRouter({
