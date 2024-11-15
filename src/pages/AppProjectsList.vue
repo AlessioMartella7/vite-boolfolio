@@ -1,12 +1,12 @@
 <script>
 import axios from 'axios';
-import AppMainCard from './AppMainCard.vue';
+import AppProjectCard from './AppProjectCard.vue';
 
 export default {
     components:{
-        AppMainCard,
+        AppProjectCard,
     },
-    name: 'AppMain',
+    name: 'AppProjectsList',
 
     data() {
         return {
@@ -40,8 +40,10 @@ export default {
             <div class="col-12 my-4">
                 <h1 class="fw-bold text-center" >Projects List</h1>
             </div>
-            <AppMainCard
-            :projectListObject = 'projectList'
+             
+            <AppProjectCard
+            v-for="project in projectList":key="project.id"
+            :projectObject = 'project'
             />
         </div>
     </div>

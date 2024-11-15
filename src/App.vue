@@ -1,10 +1,10 @@
 <script>
 
-import AppMain from './components/AppMain.vue';
+import AppProjectsList from './pages/AppProjectsList.vue';
 
 export default {
   components:{
-    AppMain,
+    AppProjectsList,
   },
   data() {
     return {
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <AppMain/>
+  <AppProjectsList/>
 </template>
 
 <style lang="scss">
