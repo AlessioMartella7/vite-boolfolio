@@ -2,10 +2,12 @@
 import axios from 'axios';
 import AppProjectCard from './AppProjectCard.vue';
 
+
 export default {
     name: 'AppProjectsList',
     components:{
         AppProjectCard,
+       
     },
 
     data() {
@@ -25,6 +27,9 @@ export default {
                   console.log(error);
                 });
         },
+        show(projectId){
+            this.$router.push({name: 'project.show', params: {project: projectId}})
+        }
     },
 
     created(){
@@ -34,10 +39,13 @@ export default {
 </script>
 
 <template>
+    <router-link v-for="project in projectList" :to="{name: project.show, params: {project: project.id}}">
             <AppProjectCard
-            v-for="project in projectList":key="project.id"
+            :key="project.id"
             :projectObject = 'project'
+            @click="show(project.id)"
             />
+            </router-link>
 </template>
 
 <style scoped>

@@ -3,12 +3,13 @@ import axios from 'axios';
 import AppProjectCard from '../components/AppProjectCard.vue';
 export default {
     name: 'AppSingleProject',
-    components: AppProjectCard,
- 
+    components: {
+        AppProjectCard,
+    },
     data() {
         return {
         apiUrl: 'http://127.0.0.1:8000/api/projects',
-        singleProject: {},
+        singleProject: null,
       
     }
     },
@@ -16,15 +17,22 @@ export default {
         getSingleProject(){
             axios.get(`${this.apiUrl}/${this.$route.params.project}`)
                 .then(response => {
-                    console.log('ciao')
-                    console.log(response);
-                    this.$singleProject = response.data.response;
+                    
+                    this.singleProject = response.data.response;
+                    console.log(response.data.response);
+                    console.log(this.singleProject);
                 })
 
                 .catch(function (error) {
                   console.log(error);
                 });
         },
+
+    },
+    computed:{
+        loaded(){
+            return this.singleProject != null;
+        }
     },
     created(){
         this.getSingleProject();
@@ -34,9 +42,7 @@ export default {
 
 <template>
     <h1>Project</h1>
-    <AppProjectCard :singleProjectObject = '$singleProject'
-    
-    />
+    <AppProjectCard :projectObject = 'singleProject' v-if="loaded" />
 </template>
 
 <style scoped>
